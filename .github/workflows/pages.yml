@@ -48,7 +48,15 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v1
-
+      - name: SFTP
+        uses: kontial/github-action-sftp@v1.2
+        with:
+          server: access936689865.webspace-data.io
+          port: 22
+          user: acc806193179
+          password: dymny5-widget-jupkyB
+          local: ./_site
+          remote: ./
   # Deployment job
   deploy:
     environment:
